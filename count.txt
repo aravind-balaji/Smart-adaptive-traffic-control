@@ -1,0 +1,220 @@
+#include <stdio.h>
+#include <iostream>
+#include <stdlib.h>
+#include <string.h>
+using namespace std;
+int e=0,f=0;
+int main()
+{
+system("sudo sh io.sh");
+while(1)
+{
+/*
+system("sudo sh red_high.sh");
+sleep(2);
+system("sudo sh red_low.sh");
+system("sudo sh yellow_high.sh");
+sleep(2);
+system("sudo sh yellow_low.sh");
+*/
+system("./density");
+system("sudo sh MFON.sh");
+system("./density2");
+system("sudo sh MRON.sh");
+char a[10],b[10];
+int c,d;
+FILE *fp1,*fp2;
+fp1=fopen("f1.txt","r");
+fgets(a,10,fp1);
+fclose(fp1);
+fp2=fopen("f2.txt","r");
+fgets(b,10,fp2);
+fclose(fp2);
+c=atoi(a);
+d=atoi(b);
+cout<< a<< endl;
+cout<< b<< endl;
+//if((c<=3) && (c>=1))
+if(c>=d)
+{
+e=1;
+if(c<=7)
+{
+system("sudo sh red_high.sh");
+sleep(2);
+system("sudo sh red_low.sh");
+system("sudo sh red_high2.sh");
+system("sudo sh yellow_high.sh");
+sleep(2);
+system("sudo sh yellow_low.sh");
+system("sudo sh green_high.sh");
+sleep(5);
+system("sudo sh green_low.sh");
+}
+
+else if(c>=8 && c<=12)
+{
+system("sudo sh red_high.sh");
+sleep(2);
+system("sudo sh red_low.sh");
+system("sudo sh red_high2.sh");
+system("sudo sh yellow_high.sh");
+sleep(2);
+system("sudo sh yellow_low.sh");
+system("sudo sh green_high.sh");
+sleep(8);
+system("sudo sh green_low.sh");
+}
+else if(c>=13)
+{
+system("sudo sh red_high.sh");
+sleep(2);
+system("sudo sh red_low.sh");
+system("sudo sh red_high2.sh");
+system("sudo sh yellow_high.sh");
+sleep(2);
+system("sudo sh yellow_low.sh");
+system("sudo sh green_high.sh");
+sleep(13);
+system("sudo sh green_low.sh");
+}
+}
+
+else
+{
+f=1;
+if(d<=7)
+{
+system("sudo sh red_high2.sh");
+sleep(2);
+system("sudo sh red_low2.sh");
+system("sudo sh red_high.sh");
+system("sudo sh yellow_high2.sh");
+sleep(2);
+system("sudo sh yellow_low2.sh");
+system("sudo sh green_high2.sh");
+sleep(5);
+system("sudo sh green_low2.sh");
+}
+
+else if(d>=8 && d<=12)
+{
+system("sudo sh red_high2.sh");
+sleep(2);
+system("sudo sh red_low2.sh");
+system("sudo sh red_high.sh");
+system("sudo sh yellow_high2.sh");
+sleep(2);
+system("sudo sh yellow_low2.sh");
+system("sudo sh green_high2.sh");
+sleep(8);
+system("sudo sh green_low2.sh");
+}
+else if(d>=13)
+{
+system("sudo sh red_high2.sh");
+sleep(2);
+system("sudo sh red_low2.sh");
+system("sudo sh red_high.sh");
+system("sudo sh yellow_high2.sh");
+sleep(2);
+system("sudo sh yellow_low2.sh");
+system("sudo sh green_high2.sh");
+sleep(13);
+system("sudo sh green_low2.sh");
+}
+}
+
+if(f==1)
+{
+f=0;
+if(c<=7)
+{
+system("sudo sh red_high.sh");
+sleep(2);
+system("sudo sh red_low.sh");
+system("sudo sh red_high2.sh");
+system("sudo sh yellow_high.sh");
+sleep(2);
+system("sudo sh yellow_low.sh");
+system("sudo sh green_high.sh");
+sleep(5);
+system("sudo sh green_low.sh");
+}
+
+else if(c>=8 && c<=12)
+{
+system("sudo sh red_high.sh");
+sleep(2);
+system("sudo sh red_low.sh");
+system("sudo sh red_high2.sh");
+system("sudo sh yellow_high.sh");
+sleep(2);
+system("sudo sh yellow_low.sh");
+system("sudo sh green_high.sh");
+sleep(8);
+system("sudo sh green_low.sh");
+}
+else if(c>=13)
+{
+system("sudo sh red_high.sh");
+sleep(2);
+system("sudo sh red_low.sh");
+system("sudo sh red_high2.sh");
+system("sudo sh yellow_high.sh");
+sleep(2);
+system("sudo sh yellow_low.sh");
+system("sudo sh green_high.sh");
+sleep(13);
+system("sudo sh green_low.sh");
+}
+}
+if(e==1)
+{
+e=0;
+if(d<=7)
+{
+system("sudo sh red_high2.sh");
+sleep(2);
+system("sudo sh red_low2.sh");
+system("sudo sh red_high.sh");
+system("sudo sh yellow_high2.sh");
+sleep(2);
+system("sudo sh yellow_low2.sh");
+system("sudo sh green_high2.sh");
+sleep(5);
+system("sudo sh green_low2.sh");
+}
+
+else if(d>=8 && d<=12)
+{
+system("sudo sh red_high2.sh");
+sleep(2);
+system("sudo sh red_low2.sh");
+system("sudo sh red_high.sh");
+system("sudo sh yellow_high2.sh");
+sleep(2);
+system("sudo sh yellow_low2.sh");
+system("sudo sh green_high2.sh");
+sleep(8);
+system("sudo sh green_low2.sh");
+}
+else if(d>=13)
+{
+system("sudo sh red_high2.sh");
+sleep(2);
+system("sudo sh red_low2.sh");
+system("sudo sh red_high.sh");
+system("sudo sh yellow_high2.sh");
+sleep(2);
+system("sudo sh yellow_low2.sh");
+system("sudo sh green_high2.sh");
+sleep(13);
+system("sudo sh green_low2.sh");
+}
+}
+
+}
+return 0;
+
+}
